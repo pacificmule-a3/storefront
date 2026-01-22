@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image"
 import React, { useState, useEffect, useRef, useCallback } from "react"
-import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react"
+import { Swiper, SwiperSlide, SwiperRef, useSwiper, useSwiperSlide } from "swiper/react"
 import SwiperCore from "swiper"
 import { Controller, EffectFade, Autoplay, EffectCoverflow, Navigation, Pagination} from "swiper/modules"
 import "swiper/css"
@@ -17,11 +17,15 @@ type SliderSwiper = { id: number; img: string; }
 
 const SwiperComponent = () => {
   const [thumbSwiper, setThumbSwiper] = useState(0)
-  const swiperRef = useRef(null)
+  const swiperRef = useRef<SwiperRef>(null)
 
   
   useEffect(() => {
-    swiperRef.current?.swiper.slideTo(thumbSwiper)
+   // const swiperContainer = swiperRef.current as any 
+   // const params = { initialSlide: 4 }  
+  //  Object.assign(swiperContainer, params) 
+   // swiperContainer?.slideTo(thumbSwiper)
+    if(swiperRef.current) swiperRef.current?.swiper.slideTo(thumbSwiper)
     console.log(swiperRef.current)
   }, [thumbSwiper])
 
@@ -52,7 +56,7 @@ const SwiperComponent = () => {
                     >
 
 
-                        <SwiperSlide key={1} className="swiper-slide hero-item">
+                        <SwiperSlide className="swiper-slide hero-item">
                             <div className="hero-content">
                                 <p className="title title--big">
                                     All products are proudly manufactured in the USA
@@ -67,48 +71,57 @@ const SwiperComponent = () => {
                             </div>
                         </SwiperSlide>
 
-                        <SwiperSlide key={2} className="swiper-slide hero-item">
+                        <SwiperSlide className="swiper-slide hero-item">
                             <div className="hero-item__img">
-                                <Image unoptimized={true} alt="" width={0} height={0} src='/img/slider/1.webp' />
+                                <Image unoptimized={true} alt="" width={0} height={0} src='/img/slider/4.webp' />
                             </div>
                         </SwiperSlide>
-                        <SwiperSlide key={3} className="swiper-slide hero-item">
+                        <SwiperSlide className="swiper-slide hero-item">
                             <div className="hero-item__img">
-                                <Image unoptimized={true} alt="" width={0} height={0} src='/img/slider/2.webp' />
-                            </div>
-                        </SwiperSlide>
-
-                        <SwiperSlide key={4} className="swiper-slide hero-item">
-                            <div className="hero-content">
-                                <p className="title title--big">
-                                    All products are proudly manufactured in the USA
-                                </p>
-                            </div>
-                            <div className="hero-item__img">
-                                <Image unoptimized={true} alt="" width={0} height={0} src='/img/slider/3.webp' />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide key={5} className="swiper-slide hero-item">
-                            <div className="hero-content">
-                                <p className="title title--big">
-                                    All products are proudly manufactured in the USA
-                                </p>
-                            </div>
-                            <div className="hero-item__img">
-                                <Image unoptimized={true} alt="" width={0} height={0} src='/img/slider/3.webp' />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide key={6} className="swiper-slide hero-item">
-                            <div className="hero-content">
-                                <p className="title title--big">
-                                    All products are proudly manufactured in the USA
-                                </p>
-                            </div>
-                            <div className="hero-item__img">
-                                <Image unoptimized={true} alt="" width={0} height={0} src='/img/slider/3.webp' />
+                                <Image unoptimized={true} alt="" width={0} height={0} src='/img/slider/5.jpg' />
                             </div>
                         </SwiperSlide>
 
+                        <SwiperSlide className="swiper-slide hero-item">
+                            <div className="hero-content">
+                                <p className="title title--big">
+                                    All products are proudly manufactured in the USA
+                                </p>
+                            </div>
+                            <div className="hero-item__img">
+                                <Image unoptimized={true} alt="" width={0} height={0} src='/img/slider/6.jpg' />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide className="swiper-slide hero-item">
+                            <div className="hero-content">
+                                <p className="title title--big">
+                                    All products are proudly manufactured in the USA
+                                </p>
+                            </div>
+                            <div className="hero-item__img">
+                                <Image unoptimized={true} alt="" width={0} height={0} src='/img/slider/7.jpg' />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide className="swiper-slide hero-item">
+                            <div className="hero-content">
+                                <p className="title title--big">
+                                    All products are proudly manufactured in the USA
+                                </p>
+                            </div>
+                            <div className="hero-item__img">
+                                <Image unoptimized={true} alt="" width={0} height={0} src='/img/slider/8.jpg' />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide className="swiper-slide hero-item">
+                            <div className="hero-content">
+                                <p className="title title--big">
+                                    All products are proudly manufactured in the USA
+                                </p>
+                            </div>
+                            <div className="hero-item__img">
+                                <Image unoptimized={true} alt="" width={0} height={0} src='/img/slider/9.jpg' />
+                            </div>
+                        </SwiperSlide>
                     </Swiper>
                 </div>
                   
@@ -126,6 +139,7 @@ const SwiperComponent = () => {
                                               disableOnInteraction: true,
                                           }}
                                           modules={[Autoplay]}
+                                          onSwiper={(swiper) => {  }}
                                           onClick={(swiper) => {
                                               const {snapIndex, realIndex} = swiper
                                             //  swiper.slideTo(snapIndex, 1100)

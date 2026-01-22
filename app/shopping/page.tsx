@@ -131,16 +131,7 @@ export default function App() {
                                                             
                                                         </svg>
                                                     </a>
-                                                    <select name="" id="" className="input__item">
-                                                        <option disabled value="">Choose Choose Choose
-                                                            Choose
-                                                            1
-                                                        </option>
-                                                        <option value="">Choose Choose Choose Choose 1
-                                                        </option>
-                                                        <option value="">Choose 1</option>
-                                                        <option value="">Choose 1</option>
-                                                    </select>
+
 
                                                     <svg className="icon icon--arrow">
                                                         
@@ -158,12 +149,7 @@ export default function App() {
                                                     </p>
                                                     <div className="input-row__item fieldset">
                                                         <div className="input input--small">
-                                                            <select name="" id="" className="input__item">
-                                                                <option disabled selected>Choose 1</option>
-                                                                <option value="">Choose 1</option>
-                                                                <option value="">Choose 1</option>
-                                                                <option value="">Choose 1</option>
-                                                            </select>
+
 
                                                             <svg className="icon icon--arrow">
                                                                 
@@ -177,12 +163,7 @@ export default function App() {
                                                     </p>
                                                     <div className="input-row__item fieldset">
                                                         <div className="input input--small">
-                                                            <select name="" id="" className="input__item">
-                                                                <option disabled value="">Choose 1</option>
-                                                                <option value="">Choose 1</option>
-                                                                <option value="">Choose 1</option>
-                                                                <option value="">Choose 1</option>
-                                                            </select>
+
 
                                                             <svg className="icon icon--arrow">
                                                                 
