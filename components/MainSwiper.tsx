@@ -16,7 +16,7 @@ type SliderSwiper = { id: number; img: string; }
 
 
 const SwiperComponent = () => {
-  const [thumbSwiper, setThumbSwiper] = useState(0)
+  const [thumbsSwiper, setThumbsSwiper] = useState(0)
   const swiperRef = useRef<SwiperRef>(null)
 
   
@@ -25,9 +25,9 @@ const SwiperComponent = () => {
    // const params = { initialSlide: 4 }  
   //  Object.assign(swiperContainer, params) 
    // swiperContainer?.slideTo(thumbSwiper)
-    if(swiperRef.current) swiperRef.current?.swiper.slideTo(thumbSwiper)
+    if(swiperRef.current) swiperRef.current?.swiper.slideTo(thumbsSwiper)
     console.log(swiperRef.current)
-  }, [thumbSwiper])
+  }, [thumbsSwiper])
 
 
   return (
@@ -132,18 +132,16 @@ const SwiperComponent = () => {
                                           spaceBetween={20}
                                           slidesPerView={4}
                                           freeMode={true}
-                                          watchSlidesProgress
                                           slideToClickedSlide={true}
                                           autoplay={{
                                               delay: 9000,
                                               disableOnInteraction: true,
                                           }}
                                           modules={[Autoplay]}
-                                          onSwiper={(swiper) => {  }}
                                           onClick={(swiper) => {
                                               const {snapIndex, realIndex} = swiper
                                             //  swiper.slideTo(snapIndex, 1100)
-                                              setThumbSwiper(realIndex)
+                                              setThumbsSwiper(realIndex)
                                             //  swiper.slideTo(snapIndex)
                                             //  console.log(realIndex, swiper)
                                             }
