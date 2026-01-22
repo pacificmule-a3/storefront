@@ -1,65 +1,168 @@
-import Image from "next/image";
 
-export default function Home() {
+import Image from "next/image"
+import MainSwiper from '@/components/MainSwiper'
+import HomeSwiper from '@/components/HomeSwiper'
+
+export default function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+
+        <div className="content__wrapper">
+            <MainSwiper />
+
+            <div className="hero-home">
+                <HomeSwiper />
+            </div>
+
+            <section className="section">
+                <div className="section__wrapper">
+                    <div className="container">
+                        <div className="block">
+                            <div className="block__wrapper">
+                                <div className="block__grid">
+                                    <div className="block-img">
+                                        <div className="block-img__wrapper">
+                                            <p className="block__tag">About us</p>
+                                        </div>
+                                        <Image className="full" unoptimized={true} alt="Logo" width={0} height={0} src="/img/slider/1.webp" />   
+                                    </div>
+                                    <div className="block-content">
+                                        <div className="block-content__wrapper">
+                                            <div className="block-content__box">
+                                                <div className="block-content__text">
+                                                    <h2 className="title title--base">
+                                                        Our company has its
+                                                        <span className="title title--accent">own production</span>
+                                                        of metal car accessories
+                                                    </h2>
+                                                    <p className="text text--opacity">
+                                                        One of the elements described in the paragraph above. New ones
+                                                        may
+                                                        be added in the future. The picture below shows a Bed Rack
+                                                        mounted
+                                                        on a pickup truck body.
+                                                    </p>
+                                                    <p className="text text--opacity">
+                                                        An element or group of elements that can be installed on or
+                                                        using
+                                                        one of the main products. In the photo below, a Bed Rack with an
+                                                        option is a set of 4 screens.
+                                                    </p>
+                                                    <p className="text text--opacity">
+                                                        A website for online sales and advertising of self-made
+                                                        products.
+                                                        Automotive-themed accessories made of metal, mostly stainless
+                                                        steel
+                                                        pipes, are typically used to protect specific parts of cars
+                                                        during
+                                                        transportation or outdoor adventures (overlanding).
+                                                    </p>
+                                                    <p className="text text--opacity">
+                                                        One of the elements described in the paragraph above. New ones
+                                                        may
+                                                        be added in the future. The picture below shows a Bed Rack
+                                                        mounted
+                                                        on a pickup truck body.
+                                                    </p>
+                                                    <p className="text text--opacity">
+                                                        One of the elements described in the paragraph above. New ones
+                                                        may
+                                                        be added in the future. The picture below shows a Bed Rack
+                                                        mounted
+                                                        on a pickup truck body.
+                                                    </p>
+                                                    <p className="text text--opacity">
+                                                        One of the elements described in the paragraph above. New ones
+                                                        may
+                                                        be added in the future. The picture below shows a Bed Rack
+                                                        mounted
+                                                        on a pickup truck body.
+                                                    </p>
+                                                    <p className="text text--opacity">
+                                                        One of the elements described in the paragraph above. New ones
+                                                        may
+                                                        be added in the future. The picture below shows a Bed Rack
+                                                        mounted
+                                                        on a pickup truck body.
+                                                    </p>
+
+                                                </div>
+                                                <div className="block-content__footer">
+                                                    <a href="#" className="button button--text">
+                                                        <span className="button__text">More about company</span>
+                                                        <svg className="button__icon">
+                                                            
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="section">
+                <div className="section__wrapper">
+                    <div className="container">
+                        <div className="block">
+                            <div className="block__wrapper">
+                                <div className="block__grid">
+
+
+                                    <div className="block-content">
+                                        <div className="block-content__wrapper">
+                                            <div className="block-content__box">
+                                                <div className="block-content__text">
+                                                    <h2 className="title title--base">
+                                                        <span className="title title--accent">All products</span>
+                                                        are proudly designed, engineered and manufactured
+                                                        <span className="title title--accent">in the USA</span>
+                                                    </h2>
+                                                    <p className="text text--opacity">
+                                                        All products are proudly designed, engineered, and manufactured
+                                                        in the USA using premium materials. Built to meet the highest
+                                                        standards of quality, durability, and performance for real-world
+                                                        American conditions.
+                                                    </p>
+                                                    <p className="text text--opacity">
+                                                        One of the elements described in the paragraph above. New ones
+                                                        may be added in the future. The picture below shows a Bed Rack
+                                                        mounted on a pickup truck body.
+                                                    </p>
+                                                    <p className="text text--opacity">
+                                                        An element or group of elements that can be installed on or
+                                                        using one of the main products. In the photo below, a Bed Rack
+                                                        with an option is a set of 4 screens.
+                                                    </p>
+                                                </div>
+                                                <div className="block-content__footer">
+                                                    <a href="#" className="button button--text">
+                                                        <span className="button__text">More</span>
+                                                        <svg className="button__icon">
+                                                            
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="block-img">
+                                        <div className="block-img__wrapper">
+                                            <p className="block__tag">Made in USA</p>
+                                        </div>
+                                        <Image className="full" unoptimized={true} alt="Logo" width={0} height={0} src="/img/slider/2.webp" />   
+                                    </div> 
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+
+  )
 }
