@@ -1,6 +1,7 @@
-
+import SlideDown from "@/components/transitions/SlideDown"
 export default function App() {
   return (
+    <SlideDown> 
         <div className="content__wrapper">
             <section className="section">
                 <div className="section__wrapper">
@@ -195,5 +196,6 @@ export default function App() {
             </section>
 
         </div>
+    </SlideDown>     
   )
 }

@@ -94,8 +94,6 @@ export default function App() {
         
   }, [products])  
 
-  console.log(edges)
-
   if (isLoading) return <div className="loading"><PuffLoader color="#f58220" /></div>
   if (error) return <div className="loading">Error: {error.message}</div>
   return (
@@ -177,12 +175,7 @@ export default function App() {
                                                     </p>
                                                     <div className="input-row__item fieldset">
                                                         <div className="input input--small">
-                                                            <select name="" id="" className="input__item">
-                                                                <option disabled value="">Choose 1</option>
-                                                                <option value="">Choose 1</option>
-                                                                <option value="">Choose 1</option>
-                                                                <option value="">Choose 1</option>
-                                                            </select>
+
 
                                                             <svg className="icon icon--arrow">
                                                                 
@@ -196,10 +189,10 @@ export default function App() {
                                                     <label className="checkbox">
                                                         <input type="checkbox" className="checkbox__input" />
                                                         <span className="checkbox__checkmark">
-                                                         <svg className="icon">
-                                                                
-                                                            </svg>
-                                                    </span>
+                                                            <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236.988 236.988">
+                                                                <polygon points="198.098,24.326 87.543,134.881 38.891,86.229 0,125.121 87.543,212.662 236.988,63.217 "/>
+                                                            </svg> 
+                                                        </span>
                                                         <span className="checkbox__text text text--middle text--semibold">
                                                     Bed Rack
                                                 </span>
@@ -207,9 +200,9 @@ export default function App() {
                                                     <label className="checkbox">
                                                         <input type="checkbox" className="checkbox__input" />
                                                         <span className="checkbox__checkmark">
-                                                         <svg className="icon">
-                                                                
-                                                            </svg>
+                                                            <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236.988 236.988">
+                                                                <polygon points="198.098,24.326 87.543,134.881 38.891,86.229 0,125.121 87.543,212.662 236.988,63.217 "/>
+                                                            </svg> 
                                                     </span>
                                                         <span className="checkbox__text text text--middle text--semibold">
                                                   Bull Bar
@@ -218,9 +211,9 @@ export default function App() {
                                                     <label className="checkbox">
                                                         <input type="checkbox" className="checkbox__input" />
                                                         <span className="checkbox__checkmark">
-                                                         <svg className="icon">
-                                                                
-                                                            </svg>
+                                                            <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236.988 236.988">
+                                                                <polygon points="198.098,24.326 87.543,134.881 38.891,86.229 0,125.121 87.543,212.662 236.988,63.217 "/>
+                                                            </svg> 
                                                     </span>
                                                         <span className="checkbox__text text text--middle text--semibold">
                                                    Running Board
@@ -229,9 +222,9 @@ export default function App() {
                                                     <label className="checkbox">
                                                         <input type="checkbox" className="checkbox__input" />
                                                         <span className="checkbox__checkmark">
-                                                         <svg className="icon">
-                                                                
-                                                            </svg>
+                                                            <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236.988 236.988">
+                                                                <polygon points="198.098,24.326 87.543,134.881 38.891,86.229 0,125.121 87.543,212.662 236.988,63.217 "/>
+                                                            </svg> 
                                                     </span>
                                                         <span className="checkbox__text text text--middle text--semibold">
                                                  HD Grille Guard

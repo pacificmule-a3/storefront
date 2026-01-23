@@ -1,7 +1,9 @@
 import Image from "next/image"
+import SlideUp from "@/components/transitions/SlideUp"
 
 export default function App() {
   return (
+    <SlideUp> 
         <div className="content__wrapper">
             <section className="section">
                 <div className="section__wrapper">
@@ -211,5 +213,6 @@ export default function App() {
             </section>
 
         </div>
+    </SlideUp>    
   )
 }

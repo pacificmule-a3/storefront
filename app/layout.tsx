@@ -1,14 +1,16 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { Provider } from "react-redux"
 import { store } from "@/state/store"
+import { usePathname } from "next/navigation"
 import Image from "next/image"
 import Link from 'next/link'
 
-import Transition from "@/components/Transitions"
+import MobileMenu from "@/components/MobileMenu"
+
 import "@/css/css/reset.css"
 import "@/css/css/font.css"
 import "@/css/css/index.css"
-
 
 
 export default function RootLayout({
@@ -16,6 +18,13 @@ export default function RootLayout({
 } : {
   children: React.ReactNode;
 } ) {
+  const pathname = usePathname()
+  const [isMenuActive, setMenuActive] = useState(false)
+
+  //useEffect(() => {
+   // setMenuActive(false)
+  //}, [pathname])
+
   return <Provider store={store}>
     <html lang="en">
       <body>
@@ -26,25 +35,25 @@ export default function RootLayout({
                     <div className="nav__row">
                         <div className="nav-main nav-main--header">
                             <div className="nav-main__wrapper nav-main__wrapper--header">
-                                <Link href="#" className="burger">
+                                <Link href="#" className={isMenuActive ? "burger active" : "burger"} onClick={() => setMenuActive(state => !state)}>
                                    <span className="burger__wrapper"></span>
                                 </Link> 
                                 <Link href="/" className="nav__logo nav__logo--header logo">
                                     <Image unoptimized={true} alt="Logo" width={301} height={58} src="/img/logo.webp" className="logo__img"  />
                                 </Link> 
                                 <ul className="nav-list nav-list--desktop">
-                                <li className="nav-list__item">
+                                <li className={pathname == "/products" ? "nav-list__item active" : "nav-list__item"}>
                                     <Link href="/products" className="nav-list__link">
                                         Products
                                     </Link> 
                                 </li>
-                                <li className="nav-list__item">
-                                    <Link href="/shopping" className="nav-list__link">
+                                <li className={pathname == "/shopping" ? "nav-list__item active" : "nav-list__item"}>
+                                    <Link href="/shopping" className={"nav-list__link"}>
                                         Shopping
                                     </Link> 
                                 </li>
                                 </ul>
-                                <Link href="#" className="nav-button active nav-button--header nav-button--clear">
+                                <Link href="#" className="nav-button">
                                     <Image unoptimized={true} alt="Shop" width={0} height={0} src="/img/sprite.svg#shop" className="nav-button__icon" />
                                 </Link> 
                             </div>
@@ -70,11 +79,14 @@ export default function RootLayout({
                 </div>
             </div>
         </header>
-        <main className="content">
-            <Transition> 
+        <div className={isMenuActive ? "mobile-menu active" : "mobile-menu"} onClick={() => setMenuActive(false)}>
+            <MobileMenu />
+        </div>
+      
+            <main className="content">
                 {children}
-            </Transition>
-        </main>
+            </main>
+  
         <footer className="footer menu">
             <div className="container">
                 <div className="menu__wrapper menu__wrapper--footer">
